@@ -14,7 +14,7 @@ client.once(Events.ClientReady,c=>{
 client.on(Events.MessageCreate,async m=>{
 	if(m.author.bot)return;
 	console.log(`受信しました${m}`);
-	if(!m.system&&m.mentions.everyone&&m.mentions.users.has("1345636416566333533")){
+	if(!m.system&&!m.mentions.everyone&&m.mentions.users.has("1345636416566333533")){
 		let content =m.content.replace(/(?:<@[\d]+?> )*?/,"");
 		console.log(content);
 		m.reply(content);
