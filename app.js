@@ -18,7 +18,7 @@ const express=require("express");
 
 const app=express();
 
-app.get("/",()=>{res.send("Server is running.")});
+app.get("/",()=>{res.sendStatus(200)});
 
 const port=process.env.PORT||8080;
 app.listen(port,()=>{console.log(`Server is running on PORT ${port}.`)});
