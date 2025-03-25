@@ -11,7 +11,7 @@ client.once(Events.ClientReady,c=>{
 	console.log(`準備OKです! ${c.user.tag}がログインします。`);
 });
 
-client.on("messageCreate",async message=>{
+client.on(Events.MessageCreate,async message=>{
 	console.log(`受信しました${JSON.stringify(message)}`);
 });
 
