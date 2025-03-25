@@ -11,8 +11,14 @@ client.once(Events.ClientReady,c=>{
 	console.log(`準備OKです! ${c.user.tag}がログインします。`);
 });
 
-client.on(Events.MessageCreate,async message=>{
-	console.log(`受信しました${JSON.stringify(message)}`);
+client.on(Events.MessageCreate,async m=>{
+	if(msg.author.bot)return;
+	console.log(`受信しました${m}`);
+	if(!m.system&&m.mentions.everyone&&m.mentions.users.has("1345636416566333533")){
+		let content =m.content.replace(/(?:<@[\d]+?> )*?/,"");
+		console.log(content);
+		m.reply(content);
+	}
 });
 
 client.login(token);
