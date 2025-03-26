@@ -21,3 +21,5 @@ async function genText(prompt){
   });
   return res;
 }
+
+module.exports={genText};
