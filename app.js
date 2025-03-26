@@ -1,8 +1,5 @@
 const {Client,Events,GatewayIntentBits}=require("discord.js");
-const {genText}=require("./utils/gemini");
 const token=process.env.TOKEN;
-
-(async()=>{console.log(await genText("こんにちは"))})();;
 
 const client=new Client({intents:[
 	GatewayIntentBits.Guilds,
