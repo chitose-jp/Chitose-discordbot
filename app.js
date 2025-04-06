@@ -1,4 +1,5 @@
 const {Client,Events,GatewayIntentBits}=require("discord.js");
+const checkBlackWords=require("./utils/filter");
 const token=process.env.TOKEN;
 
 const client=new Client({intents:[
@@ -17,6 +18,7 @@ client.on(Events.MessageCreate,async m=>{
 	if(!m.system&&!m.mentions.everyone&&m.mentions.users.has("1345636416566333533")){
 		let content =m.content.replace(/(?:<@[\d]+?> )*?/,"");
 		console.log(content);
+		if(checkBlackWords(content))returnm.reply("禁止ワードが検出されました");
 		m.reply(content);
 	}
 });
